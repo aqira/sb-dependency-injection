@@ -21,6 +21,8 @@ public class DependencyInjectionApplication {
 		System.out.println(context.getBean("anotherSingleBean"));
 		System.out.println(context.getBean("dependentBean"));
 
+		System.out.println(context.getBean("componentClass"));
+		System.out.println(((ComponentClass)context.getBean("componentClass")).describeSelf());
 	}
 
 	@Bean
