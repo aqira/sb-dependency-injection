@@ -19,6 +19,7 @@ public class DependencyInjectionApplication {
 
 		System.out.println(context.getBean("singleBean"));
 		System.out.println(context.getBean("anotherSingleBean"));
+		System.out.println(context.getBean("dependentBean"));
 
 	}
 
@@ -30,6 +31,11 @@ public class DependencyInjectionApplication {
 	@Bean
 	public BeanClass anotherSingleBean(){
 		return new BeanClass();
+	}
+
+	@Bean
+	public String dependentBean(@Qualifier("singleBean") BeanClass bean) {
+		return "saya bean yang menggunakan singleBean " + bean.toString();
 	}
 
 }
