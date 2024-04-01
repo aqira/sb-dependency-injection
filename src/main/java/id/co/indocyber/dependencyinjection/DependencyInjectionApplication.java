@@ -17,12 +17,18 @@ public class DependencyInjectionApplication {
 			System.out.println(beanDefinitionName);
 		}
 
-		System.out.println(context.getBean(BeanClass.class));
+		System.out.println(context.getBean("singleBean"));
+		System.out.println(context.getBean("anotherSingleBean"));
 
 	}
 
 	@Bean
 	public BeanClass singleBean() {
+		return new BeanClass();
+	}
+
+	@Bean
+	public BeanClass anotherSingleBean(){
 		return new BeanClass();
 	}
 
