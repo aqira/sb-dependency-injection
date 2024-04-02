@@ -13,15 +13,17 @@ public class ConfigurationClass {
     }
 
     @Bean
-    public void method(){
+    public ConfigurationClass method(){
         System.out.println("1 configuration, dapat memiliki banyak bean");
         System.out.println("1 configuration, dapat memiliki banyak dependency, " +
                 "yang dimana dependency tersebut dapat digunakan oleh banyak bean");
         System.out.println(beanClass.toString());
+        return this;
     }
 
     @Bean
-    public void anotherMethod(){
+    public String anotherMethod(){
         System.out.println(beanClass.toString());
+        return "berhasil juga";
     }
 }
