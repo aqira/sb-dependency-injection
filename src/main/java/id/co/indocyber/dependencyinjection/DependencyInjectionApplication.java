@@ -23,6 +23,8 @@ public class DependencyInjectionApplication {
 
 		System.out.println(context.getBean("componentClass"));
 		System.out.println(((ComponentClass)context.getBean("componentClass")).describeSelf());
+
+		System.out.println(context.getBean("configurationClass"));
 	}
 
 	@Bean
